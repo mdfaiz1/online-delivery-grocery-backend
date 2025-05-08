@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { addProduct } from "../controller/product.controller.js";
+import {
+  addProduct,
+  productList,
+  productById,
+  changeStock,
+} from "../controller/product.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 
 const productRouter = Router();
@@ -13,5 +18,8 @@ productRouter.route("/").post(
   ]),
   addProduct
 );
+productRouter.route("/").get(productList);
+productRouter.route("/:id").get(productById);
+productRouter.route("/:id").patch(changeStock);
 
 export default productRouter;

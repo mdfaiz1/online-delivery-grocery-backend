@@ -26,4 +26,16 @@ app.use("/api/v1/seller", sellerRouter);
 import productRouter from "./routes/product.route.js";
 app.use("/api/v1/product", productRouter);
 
+// Cart Router
+import cartRouter from "./routes/cart.route.js";
+app.use("/api/v1/cart", cartRouter);
+
+// address Router
+import addressRouter from "./routes/address.route.js";
+app.use("/api/v1/address", addressRouter);
+
+// Order Router
+import orderRouter from "./routes/order.route.js";
+app.use("/api/v1/order", orderRouter);
+
 export { app };
